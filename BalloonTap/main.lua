@@ -22,3 +22,7 @@ physics.start()
 
 physics.addBody( platform, "static" )
 physics.addBody( balloon, "dynamic", { radius=48, bounce=0.8 } )
+
+local function pushBalloon()
+    balloon:applyLinearImpulse( 0, -0.75, balloon.x, balloon.y )
+end
