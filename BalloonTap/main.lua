@@ -30,6 +30,8 @@ physics.addBody( balloon, "dynamic", { radius=48, bounce=0.8 } )
 
 local function pushBalloon()
     balloon:applyLinearImpulse( 0, -0.75, balloon.x, balloon.y )
+    tapCount = tapCount + 1
+    tapText.text = tapCount
 end
 
 balloon:addEventListener( "tap", pushBalloon )
