@@ -4,9 +4,14 @@
 --
 -----------------------------------------------------------------------------------------
 
+local tapCount = 0
+
 local background = display.newImageRect( "images/background.png", 360, 570 )
 background.x = display.contentCenterX
 background.y = display.contentCenterY
+
+local tapText = display.newText( tapCount, display.contentCenterX, 20, native.systemFont, 40 )
+tapText:setFillColor( 0, 0, 0 )
 
 local platform = display.newImageRect( "images/platform.png", 300, 50 )
 platform.x = display.contentCenterX
