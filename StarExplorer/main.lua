@@ -48,3 +48,4 @@ local sheetOptions =
         },
     },
 }
+local objectSheet = graphics.newImageSheet( "images/gameObjects.png", sheetOptions )
