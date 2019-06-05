@@ -71,3 +71,5 @@ local uiGroup = display.newGroup()    -- Display group for UI objects like the s
 local background = display.newImageRect( backGroup, "images/background.png", 800, 1400 )
 background.x = display.contentCenterX
 background.y = display.contentCenterY
+
+ship = display.newImageRect( mainGroup, objectSheet, 4, 98, 79 )
