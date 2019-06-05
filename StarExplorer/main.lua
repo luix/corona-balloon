@@ -49,3 +49,15 @@ local sheetOptions =
     },
 }
 local objectSheet = graphics.newImageSheet( "images/gameObjects.png", sheetOptions )
+
+-- Initialize variables
+local lives = 3
+local score = 0
+local died = false
+
+local asteroidsTable = {}
+
+local ship
+local gameLoopTimer
+local livesText
+local scoreText
