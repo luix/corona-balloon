@@ -90,3 +90,9 @@ local function updateText()
   livesText.text = "Lives: " .. lives
   scoreText.text = "Score: " .. score
 end
+
+
+local function createAsteriods()
+
+
+end
