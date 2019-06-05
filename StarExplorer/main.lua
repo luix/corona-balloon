@@ -61,3 +61,8 @@ local ship
 local gameLoopTimer
 local livesText
 local scoreText
+
+-- Set up display groups
+local backGroup = display.newGroup()  -- Display group for the background image
+local mainGroup = display.newGroup()  -- Display group for the ship, asteroids, lasers, etc.
+local uiGroup = display.newGroup()    -- Display group for UI objects like the score
