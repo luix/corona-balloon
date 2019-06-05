@@ -66,3 +66,8 @@ local scoreText
 local backGroup = display.newGroup()  -- Display group for the background image
 local mainGroup = display.newGroup()  -- Display group for the ship, asteroids, lasers, etc.
 local uiGroup = display.newGroup()    -- Display group for UI objects like the score
+
+-- Load the background
+local background = display.newImageRect( backGroup, "images/background.png", 800, 1400 )
+background.x = display.contentCenterX
+background.y = display.contentCenterY
