@@ -106,10 +106,15 @@ local function createAsteriods()
     newAsteroid.x = -60
     newAsteroid.y = math.random( 500 )
     newAsteroid:setLinearVelocity( math.random( 40,120 ), math.random( 20,60 ) )
-  elseif ( whereForm == 2) then
+  elseif ( whereForm == 2 ) then
     -- from the top
     newAsteroid.x = math.random( display.contentWidth )
     newAsteroid.y = -60
-    newAsteroid:setLinearVelocity( math.random( -40,40 ), math.random( 40,120 ) )    
+    newAsteroid:setLinearVelocity( math.random( -40,40 ), math.random( 40,120 ) )
+  elseif ( whereForm == 3 ) then
+    -- from the right
+    newAsteroid.x = display.contentWidth + 60
+    newAsteroid.y = math.random( 500 )
+    newAsteroid:setLinearVelocity( math.random( -120,-40 ), math.random( 20,60 ) )
   end
 end
