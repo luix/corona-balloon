@@ -98,4 +98,12 @@ local function createAsteriods()
   table.insert( asteroidsTable, newAsteroid )
   physics.addBody( newAsteroid, "dynamic", { radius=40, bounce=0.8 } )
   newAsteroid.myName = "asteroid"
+
+  local whereForm = math.random( 3 )
+
+  if ( whereForm == 1 ) then
+    -- from the left
+    newAsteroid.x = -60
+    newAsteroid.y = math.random( 500 )
+  end
 end
