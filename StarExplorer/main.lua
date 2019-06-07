@@ -105,5 +105,7 @@ local function createAsteriods()
     -- from the left
     newAsteroid.x = -60
     newAsteroid.y = math.random( 500 )
+    newAsteroid:setLinearVelocity( math.random( 40,120 ), math.random( 20,60 ) )
+  
   end
 end
