@@ -151,5 +151,9 @@ local function dragShip( event )
     display.currentStage:setFocus( ship )
     -- Store initial offset position
     ship.touchOffsetX = event.x - ship.x
+
+  elseif ( "moved" == phase ) then
+    -- Move the ship to the new position
+    ship.x = event.x - ship.touchOffsetX 
   end
 end
