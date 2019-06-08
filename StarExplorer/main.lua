@@ -142,5 +142,5 @@ ship:addEventListener( "tap", fireLaser )
 
 local function dragShip( event )
 
-  
+  local ship = event.target
 end
