@@ -139,3 +139,8 @@ local function fireLaser()
 end
 
 ship:addEventListener( "tap", fireLaser )
+
+local function dragShip( event )
+
+  
+end
