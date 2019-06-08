@@ -132,4 +132,6 @@ local function fireLasser()
   newLaser.x = ship.x
   newLaser.y = ship.y
   newLaser:toBack()
+
+  transition.to( newLaser, { y=-40, time=500 } )
 end
