@@ -149,5 +149,7 @@ local function dragShip( event )
   if ( "began" == phase.began ) then
     -- Set touch focus on the ship
     display.currentStage:setFocus( ship )
+    -- Store initial offset position
+    ship.touchOffsetX = event.x - ship.x
   end
 end
