@@ -131,4 +131,5 @@ local function fireLasser()
 
   newLaser.x = ship.x
   newLaser.y = ship.y
+  newLaser:toBack()
 end
