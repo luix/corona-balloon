@@ -154,6 +154,10 @@ local function dragShip( event )
 
   elseif ( "moved" == phase ) then
     -- Move the ship to the new position
-    ship.x = event.x - ship.touchOffsetX 
+    ship.x = event.x - ship.touchOffsetX
+
+  elseif ( "ended" == phase or "cancelled" == phase ) then
+    -- Release touch focus on the ship
+    display.currentStage:setFocus( nil )
   end
 end
