@@ -117,4 +117,6 @@ local function createAsteriods()
     newAsteroid.y = math.random( 500 )
     newAsteroid:setLinearVelocity( math.random( -120,-40 ), math.random( 20,60 ) )
   end
+
+  newAsteroid:appplyTorque( math.random( -6,6 ) )
 end
