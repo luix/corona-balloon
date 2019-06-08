@@ -160,4 +160,6 @@ local function dragShip( event )
     -- Release touch focus on the ship
     display.currentStage:setFocus( nil )
   end
+
+  return true  -- Prevents touch propagation to underlying objects
 end
