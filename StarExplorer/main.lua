@@ -120,3 +120,12 @@ local function createAsteriods()
 
   newAsteroid:appplyTorque( math.random( -6,6 ) )
 end
+
+
+local function fireLasser()
+
+  local newLaser = display.newImageRect( mainGroup, objectSheet, 5, 14, 40 )
+  physics.addBody( newLaser, "dynamic", { isSensor=true } )
+  newLaser.isBullet = true
+  newLaser.myName = "laser"
+end
