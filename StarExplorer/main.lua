@@ -17,36 +17,36 @@ local sheetOptions =
     frames =
     {
         {   -- 1) asteroid 1
-            x = 0,
-            y = 0,
-            width = 102,
-            height = 85
-        },
-        {   -- 2) asteroid 2
-            x = 0,
-            y = 85,
-            width = 90,
-            height = 83
-        },
-        {   -- 3) asteroid 3
-            x = 0,
-            y = 168,
-            width = 100,
-            height = 97
-        },
-        {   -- 4) ship
-            x = 0,
-            y = 265,
-            width = 98,
-            height = 79
-        },
-        {   -- 5) laser
-            x = 98,
-            y = 265,
-            width = 14,
-            height = 40
-        },
+        x = 0,
+        y = 0,
+        width = 102,
+        height = 85
     },
+    {   -- 2) asteroid 2
+    x = 0,
+    y = 85,
+    width = 90,
+    height = 83
+},
+{   -- 3) asteroid 3
+x = 0,
+y = 168,
+width = 100,
+height = 97
+},
+{   -- 4) ship
+x = 0,
+y = 265,
+width = 98,
+height = 79
+},
+{   -- 5) laser
+x = 98,
+y = 265,
+width = 14,
+height = 40
+},
+},
 }
 local objectSheet = graphics.newImageSheet( "images/gameObjects.png", sheetOptions )
 
@@ -87,55 +87,55 @@ display.setStatusBar( display.HiddenStatusBar )
 
 
 local function updateText()
-  livesText.text = "Lives: " .. lives
-  scoreText.text = "Score: " .. score
+    livesText.text = "Lives: " .. lives
+    scoreText.text = "Score: " .. score
 end
 
 
-local function createAsteriods()
+local function createAsteriod()
 
-  local newAsteroid = display.newImageRect( mainGroup, objectSheet, 1, 102, 85 )
-  table.insert( asteroidsTable, newAsteroid )
-  physics.addBody( newAsteroid, "dynamic", { radius=40, bounce=0.8 } )
-  newAsteroid.myName = "asteroid"
+    local newAsteroid = display.newImageRect( mainGroup, objectSheet, 1, 102, 85 )
+    table.insert( asteroidsTable, newAsteroid )
+    physics.addBody( newAsteroid, "dynamic", { radius=40, bounce=0.8 } )
+    newAsteroid.myName = "asteroid"
 
-  local whereForm = math.random( 3 )
+    local whereForm = math.random( 3 )
 
-  if ( whereForm == 1 ) then
-    -- from the left
-    newAsteroid.x = -60
-    newAsteroid.y = math.random( 500 )
-    newAsteroid:setLinearVelocity( math.random( 40,120 ), math.random( 20,60 ) )
-  elseif ( whereForm == 2 ) then
-    -- from the top
-    newAsteroid.x = math.random( display.contentWidth )
-    newAsteroid.y = -60
-    newAsteroid:setLinearVelocity( math.random( -40,40 ), math.random( 40,120 ) )
-  elseif ( whereForm == 3 ) then
-    -- from the right
-    newAsteroid.x = display.contentWidth + 60
-    newAsteroid.y = math.random( 500 )
-    newAsteroid:setLinearVelocity( math.random( -120,-40 ), math.random( 20,60 ) )
-  end
+    if ( whereForm == 1 ) then
+        -- from the left
+        newAsteroid.x = -60
+        newAsteroid.y = math.random( 500 )
+        newAsteroid:setLinearVelocity( math.random( 40,120 ), math.random( 20,60 ) )
+    elseif ( whereForm == 2 ) then
+        -- from the top
+        newAsteroid.x = math.random( display.contentWidth )
+        newAsteroid.y = -60
+        newAsteroid:setLinearVelocity( math.random( -40,40 ), math.random( 40,120 ) )
+    elseif ( whereForm == 3 ) then
+        -- from the right
+        newAsteroid.x = display.contentWidth + 60
+        newAsteroid.y = math.random( 500 )
+        newAsteroid:setLinearVelocity( math.random( -120,-40 ), math.random( 20,60 ) )
+    end
 
-  newAsteroid:appplyTorque( math.random( -6,6 ) )
+    newAsteroid:appplyTorque( math.random( -6,6 ) )
 end
 
 
 local function fireLaser()
 
-  local newLaser = display.newImageRect( mainGroup, objectSheet, 5, 14, 40 )
-  physics.addBody( newLaser, "dynamic", { isSensor=true } )
-  newLaser.isBullet = true
-  newLaser.myName = "laser"
+    local newLaser = display.newImageRect( mainGroup, objectSheet, 5, 14, 40 )
+    physics.addBody( newLaser, "dynamic", { isSensor=true } )
+    newLaser.isBullet = true
+    newLaser.myName = "laser"
 
-  newLaser.x = ship.x
-  newLaser.y = ship.y
-  newLaser:toBack()
+    newLaser.x = ship.x
+    newLaser.y = ship.y
+    newLaser:toBack()
 
-  transition.to( newLaser, { y=-40, time=500,
+    transition.to( newLaser, { y=-40, time=500,
     onComplete = function() display.remove( newLaser ) end
-  } )
+} )
 end
 
 ship:addEventListener( "tap", fireLaser )
@@ -143,25 +143,25 @@ ship:addEventListener( "tap", fireLaser )
 
 local function dragShip( event )
 
-  local ship = event.target
-  local phase = event.phase
+    local ship = event.target
+    local phase = event.phase
 
-  if ( "began" == phase ) then
-    -- Set touch focus on the ship
-    display.currentStage:setFocus( ship )
-    -- Store initial offset position
-    ship.touchOffsetX = event.x - ship.x
+    if ( "began" == phase ) then
+        -- Set touch focus on the ship
+        display.currentStage:setFocus( ship )
+        -- Store initial offset position
+        ship.touchOffsetX = event.x - ship.x
 
-  elseif ( "moved" == phase ) then
-    -- Move the ship to the new position
-    ship.x = event.x - ship.touchOffsetX
+    elseif ( "moved" == phase ) then
+        -- Move the ship to the new position
+        ship.x = event.x - ship.touchOffsetX
 
-  elseif ( "ended" == phase or "cancelled" == phase ) then
-    -- Release touch focus on the ship
-    display.currentStage:setFocus( nil )
-  end
+    elseif ( "ended" == phase or "cancelled" == phase ) then
+        -- Release touch focus on the ship
+        display.currentStage:setFocus( nil )
+    end
 
-  return true  -- Prevents touch propagation to underlying objects
+    return true  -- Prevents touch propagation to underlying objects
 end
 
 ship:addEventListener( "touch", dragShip )
@@ -169,5 +169,6 @@ ship:addEventListener( "touch", dragShip )
 
 local function gameLoop()
 
-
+    -- Create new asteroid
+    createAsteriod()
 end
