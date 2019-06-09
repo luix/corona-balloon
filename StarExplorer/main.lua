@@ -174,6 +174,15 @@ local function gameLoop()
 
     -- Remove asteroids which have drifted off screen
     for i = #asteroidsTable, 1, -1 do
+        local thisAsteroid = asteroidsTable[i]
 
+        if ( thisAsteroid.x < -100 or
+             thisAsteroid.x > display.contentWidth + 100 or
+             thisAsteroid.y < -100 or
+             thisAsteroid.y > display.contentHeight + 100 )
+        then
+            display.remove( thisAsteroid )
+            table.remove( asteroidsTable, i )
+        end
     end
 end
