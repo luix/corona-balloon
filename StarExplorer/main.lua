@@ -165,3 +165,9 @@ local function dragShip( event )
 end
 
 ship:addEventListener( "touch", dragShip )
+
+
+local function gameLoop()
+
+
+end
