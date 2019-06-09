@@ -216,7 +216,9 @@ local function onCollision( event )
         if ( ( obj1.myName == "laser" and obj2.myName == "asteroid" ) or
              ( obj1.myName == "asteroid" and obj2.myName == "laser" ) )
         then
-
+            -- Remove both the laser and asteroid
+            display.remove( obj1 )
+            display.remove( obj2 )
         end
     end
 end
