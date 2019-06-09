@@ -8,8 +8,9 @@ local scene = composer.newScene()
 -- the scene is removed entirely (not recycled) via "composer.removeScene()"
 -- -----------------------------------------------------------------------------------
 
-
-
+local physics = require( "physics" )
+physics.start()
+physics.setGravity( 0, 0 )
 
 -- -----------------------------------------------------------------------------------
 -- Scene event functions
