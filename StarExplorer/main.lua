@@ -204,3 +204,13 @@ local function restoreShip()
         end
     } )
 end
+
+
+local function onCollision( event )
+
+    if ( event.phase == "began" ) then
+
+        local obj1 = event.object1
+        local obj2 = event.object2
+    end
+end
