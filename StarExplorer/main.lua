@@ -226,6 +226,10 @@ local function onCollision( event )
                     break
                 end
             end
+
+            -- Increase score
+            score = score + 100
+            scoreText.text = "Score: " .. score 
         end
     end
 end
