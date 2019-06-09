@@ -212,5 +212,11 @@ local function onCollision( event )
 
         local obj1 = event.object1
         local obj2 = event.object2
+
+        if ( ( obj1.myName == "laser" and obj2.myName == "asteroid" ) or
+             ( obj1.myName == "asteroid" and obj2.myName == "laser" ) )
+        then
+
+        end
     end
 end
