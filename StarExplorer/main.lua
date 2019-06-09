@@ -229,7 +229,9 @@ local function onCollision( event )
 
             -- Increase score
             score = score + 100
-            scoreText.text = "Score: " .. score 
+            scoreText.text = "Score: " .. score
         end
     end
 end
+
+Runtime:addEventListener( "collision", onCollision )
