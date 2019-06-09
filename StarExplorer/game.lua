@@ -63,6 +63,10 @@ local gameLoopTimer
 local livesText
 local scoreText
 
+local backGroup
+local mainGroup
+local uiGroup
+
 -- -----------------------------------------------------------------------------------
 -- Scene event functions
 -- -----------------------------------------------------------------------------------
