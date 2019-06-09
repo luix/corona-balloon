@@ -171,4 +171,9 @@ local function gameLoop()
 
     -- Create new asteroid
     createAsteriod()
+
+    -- Remove asteroids which have drifted off screen
+    for i = #asteroidsTable, 1, -1 do
+
+    end
 end
