@@ -188,3 +188,12 @@ local function gameLoop()
 end
 
 gameLoopTimer = timer.performWithDelay( 500, gameLoop, 0 )
+
+
+local function restoreShip()
+
+    ship.isBodyActive = false
+    ship.x = display.contentCenterX
+    ship.y = display.contentHeight - 100
+
+end
