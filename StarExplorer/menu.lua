@@ -34,6 +34,12 @@ function scene:create( event )
     local title = display.newImageRect( sceneGroup, "images/title.png", 500, 80 )
     title.x = display.contentCenterX
     title.y = 200
+
+    local playButton = display.newText( sceneGroup, "Play", display.contentCenterX, 700, native.systemFont, 44 )
+    playButton:setFillColor( 0.82, 0.86, 1 )
+
+    local highScoresButton = display.newText( sceneGroup, "High Scores", display.contentCenterX, 810, native.systemFont, 44 )
+    highScoresButton:setFillColor( 0.75, 0.78, 1 )
 end
 
 
