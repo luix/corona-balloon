@@ -67,6 +67,11 @@ local backGroup
 local mainGroup
 local uiGroup
 
+
+local function updateText()
+    livesText.text = "Lives: " .. lives
+    scoreText.text = "Score: " .. score
+end
 -- -----------------------------------------------------------------------------------
 -- Scene event functions
 -- -----------------------------------------------------------------------------------
