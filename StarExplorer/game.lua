@@ -166,6 +166,22 @@ local function gameLoop()
 end
 
 
+local function restoreShip()
+
+    ship.isBodyActive = false
+    ship.x = display.contentCenterX
+    ship.y = display.contentHeight - 100
+
+    -- Fade in the ship
+    transition.to( ship, { alpha=1, time=4000,
+        onComplete = function()
+            ship.isBodyActive = true
+            died = false
+        end
+    } )
+end
+
+ 
 -- -----------------------------------------------------------------------------------
 -- Scene event functions
 -- -----------------------------------------------------------------------------------
