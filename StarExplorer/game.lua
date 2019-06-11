@@ -265,6 +265,9 @@ function scene:create( event )
   -- Display lives and score
   livesText = display.newText( uiGroup, "Lives: " .. lives, 200, 80, native.systemFont, 36 )
   scoreText = display.newText( uiGroup, "Score: " .. score, 400, 80, native.systemFont, 36 )
+
+  ship:addEventListener( "tap", fireLaser )
+  ship:addEventListener( "touch", dragShip ) 
 end
 
 
