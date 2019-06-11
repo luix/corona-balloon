@@ -267,7 +267,7 @@ function scene:create( event )
   scoreText = display.newText( uiGroup, "Score: " .. score, 400, 80, native.systemFont, 36 )
 
   ship:addEventListener( "tap", fireLaser )
-  ship:addEventListener( "touch", dragShip ) 
+  ship:addEventListener( "touch", dragShip )
 end
 
 
@@ -282,6 +282,9 @@ function scene:show( event )
 
 	elseif ( phase == "did" ) then
 		-- Code here runs when the scene is entirely on screen
+    physics.start()
+    Runtime:addEventListener( "collision", onCollision )
+    gameLoopTimer = timer.performWithDelay( 500, gameLoop, 0 )
 
 	end
 end
