@@ -239,6 +239,17 @@ function scene:create( event )
 	local sceneGroup = self.view
 	-- Code here runs when the scene is first created but has not yet appeared on screen
 
+  physics.pause()  -- Temporarily pause the physics engine.
+
+  -- Set up display groups
+  backGroup = display.newGroup()  -- Display group for the background image
+  sceneGroup:insert( backGroup )  -- Insert into the scene's view group
+
+  mainGroup = display.newGroup()  -- Display group for the ship, asteroids, lasers, etc.
+  sceneGroup:insert( mainGroup )  -- Insert into the scene's view group
+
+  uiGroup = display.newGroup()    -- Display group for the UI objects like the score
+  sceneGroup:insert( uiGroup )    -- Insert into the scene's view group
 end
 
 
