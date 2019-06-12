@@ -31,6 +31,22 @@ local function loadScores()
 	end
 end
 
+
+local function saveScores()
+
+	for i = #scoresTable, 11, -1 do
+		table.remove( scoresTable, i )
+	end
+
+	local file = io.open( filePath, "w" )
+
+	if file then
+		file:write( json.encode( scoresTable ) )
+		io.close( file )
+	end
+end
+
+
 -- -----------------------------------------------------------------------------------
 -- Scene event functions
 -- -----------------------------------------------------------------------------------
