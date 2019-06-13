@@ -83,6 +83,12 @@ function scene:create( event )
 		if ( scoresTable[i] ) then
 			local yPos = 150 + ( i * 56 )
 
+			local rankNum = display.newText( sceneGroup, i .. ")", display.contentCenterX-50, yPos, native.systemFont, 36 )
+			rankNum:setFillColor( 0.8 )
+			rankNum.anchorX = 1
+
+			local thisScore = display.newText( sceneGroup, scoresTable[i], display.contentCenterX-30, yPos, native.systemFont, 36 )
+			thisScore.anchorX = 0
 		end
 end
 
