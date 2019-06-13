@@ -72,6 +72,12 @@ function scene:create( event )
 
 	-- Save scores
 	saveScores()
+
+	local background = display.newImageRect( sceneGroup, "images/background.png", 800, 1400 )
+	background.x = display.contentCenterX
+	background.y = display.contentCenterY
+
+	local highScoresHeader = display.newText( sceneGroup, "High Scores", display.contentCenterX, 100, native.systemFont, 44 )
 end
 
 
