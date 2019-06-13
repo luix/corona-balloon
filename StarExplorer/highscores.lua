@@ -59,6 +59,10 @@ function scene:create( event )
 
 	-- Load the previous scores
 	loadScores()
+
+	-- Insert the saved score from the last game into the table, then restart it
+	table.insert( scoresTable, composer.getVariable( "finalScore" ) )
+	composer.setVariable( "finalScore", 0 )
 end
 
 
