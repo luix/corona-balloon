@@ -69,6 +69,9 @@ function scene:create( event )
 		return a > b
 	end
 	table.sort( scoresTable, compare )
+
+	-- Save scores
+	saveScores()
 end
 
 
