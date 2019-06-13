@@ -78,6 +78,12 @@ function scene:create( event )
 	background.y = display.contentCenterY
 
 	local highScoresHeader = display.newText( sceneGroup, "High Scores", display.contentCenterX, 100, native.systemFont, 44 )
+
+	for i = 1, 10 do
+		if ( scoresTable[i] ) then
+			local yPos = 150 + ( i * 56 )
+
+		end
 end
 
 
